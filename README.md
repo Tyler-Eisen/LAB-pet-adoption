@@ -1,8 +1,2 @@
 # Adoption Website
-
-## Setup
-* Clone this repo to your exercises directory
-* Create a setup branch and push up the usual stuff
-* Review the [Instructions](instructions.md)
-
-# UPDATE THIS README WHEN THE ASSIGNMENT IS COMPLETED
+This was one of the first projects we made at NSS using simple html and css along with vanilla JS to filter and delete

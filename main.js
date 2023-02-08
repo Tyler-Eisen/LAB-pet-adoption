@@ -244,94 +244,9 @@ const pets = [
   ];
 
   
-  
 
 
 
-//   for (let i = 0; i < pets.length; i++) {
-//     const app =document.getElementById("#root")
-
-//     const pet= pets[i]
-//      root.innerHTML = `
-//     <div class="card">
-//     <h3  class="card-header">${pet.name}</h3>
-//    <div class="card-body">
-//       <img src="${pet.imageUrl}" class="card-img-bottom" alt="Photo of ${pet.name} the ${pet.type}">
-//       <h5 class="card-title">${pet.color}</h5>
-//       <p class="card-text">${pet.specialSkill}</p>
-// </div>
-// <h3 class="pet-type"> ${pet.type}</h4>
-//     `;
-//     // rootDiv.innerHTML += cardString;
-//     }
-
-//     const renderToDom = (divId, htmlToRender)=>{
-//       const selectedDiv = document.querySelector(divId);
-//       selectedDiv.innerHTML = htmlToRender;
-      
-//     };
-
-//     const cardsOnDom = (array) => {
-//       let domString = "";
-//       for (const member of array){
-//         domString += `<div class="card">
-//         <h3  class="card-header">${member.name}</h3>
-//        <div class="card-body">
-//           <img src="${member.imageUrl}" class="card-img-bottom" alt="Photo of ${member.name} the ${member.type}">
-//           <h5 class="card-title">${member.color}</h5>
-//           <p class="card-text">${member.specialSkill}</p>
-//     </div>
-//     <h3 class="pet-type"> ${member.type} </h3>`
-//       }
-//       renderToDom("#root",domString);
-//     }
-     
-    
-
-//     const filter = (animals,requestedType) => {
-//       const filterPetsArray  = [];
-
-//         for (const animal of animals) {
-//           if (animal.type === requestedType){
-//             filterPetsArray.push(animal);
-//           }
-//         }
-//       return filterPetsArray;
-//     }
-
-//     const dogVar = document.querySelector('#dogButton');
-//        dogVar.addEventListener('click',() => {
-//      const dogs = filter(pets,'dog');
-//      cardsOnDom(dogs);
-//      console.log('hi')
-//       });
-
-
-//       dogVar.addEventListener('click', () =>{
-//         cardsOnDom(pets);
-//       });
-
-
-// for (let i = 0; i < pets.length; i++) {
-  // const app = document.querySelector("#root")
-  
-  // app.innerHTML += 
-  // // `<div class="card text-center">
-  //   <div class="card-header">
-  //    <b>${pets[i].name}  
-  //   </div>
-  // <div class="card-body">
-  //   <img src= ${pets[i].imageUrl} alt="animal picture">
-  //   <p>${pets[i].color}</p>
-  //   <p class="card-text">${pets[i].specialSkill}</p>
-  // </div>
-  // <div>
-  // <h3 class="pet-type"> ${pets[i].type} </h3>
-  // <button class="btn btn-danger" id="delete--${pets[i].id}">Delete</button>
-  // </div>`;
-  // }
-
-  
   // Render to DOM utility function
   const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
@@ -342,20 +257,22 @@ const pets = [
   const cardsOnDom = (array) => {
     let domString = "";
     for (const member of array) {
-      domString += `<div class="card text-center">
-      <div class="card-header">
-      <b>${member.name} </b>  
-      </div>
+      domString += 
+    `<div class="card-header">
+        <h3>
+        ${member.name}  
+        </h3>
     <div class="card-body">
-      <img src= ${member.imageUrl} alt="animal picture">
-      <p>${member.color}</p>
-      <p class="card-text">${member.specialSkill}</p>
-    </div>
-    <div class="card-footer ${member.type}">
+        <img src= ${member.imageUrl} alt="animal picture">
+        <h5>${member.color}</h5>
+        <p class="card-text">${member.specialSkill}</p>
+        </div>
+    <h4 class="${member.type}">
       ${member.type}
+    </h4>
+    <button style="width:100%; position:absolute, bottom:0, margin:0 auto" class="btn btn-danger" id="delete--${member.id}">Delete</button>
     </div>
-    <button class="btn btn-danger" id="delete--${member.id}">Delete</button>
-    </div>`;
+    `;
     }
   
     renderToDom("#root", domString);
